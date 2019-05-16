@@ -9,14 +9,37 @@
 import UIKit
 
 class ModalViewController: UIViewController {
+    @IBOutlet weak var topViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var commentView: UIView!
+    @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var topView: UIView!
+    
+    var animator = UIViewPropertyAnimator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        topViewHeightConstraint.constant = 0
+//        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panContainer(_:)))
+//        commentView.addGestureRecognizer(panGesture)
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(true)
+        print("viewdid!")
+    }
+    
+    @objc func panContainer(_ sender: UIPanGestureRecognizer) {
+        let velocity = sender.velocity(in: commentView)
+        let translationY = sender.translation(in: view).y
+        print("translation.y : \(translationY)!!")
+        if abs(velocity.y) > abs(velocity.x) && translationY < 0 && abs(translationY) < UIScreen.main.bounds.height {
+//            UIView.animate(withDuration: 0.1, animations: { [unowned self]  in
+//                self.mainView.frame.origin = CGPoint(x: self.mainView.frame.origin.x, y: translationY)1
+//
+//            })
+        }
+        
+    }
 
     /*
     // MARK: - Navigation

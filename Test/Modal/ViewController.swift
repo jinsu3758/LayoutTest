@@ -14,44 +14,93 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerViewTopConstraint: NSLayoutConstraint!
     
     var screenHeight: CGFloat = 0
+    var containerPoint: CGPoint = CGPoint.zero
+    var modalVC: ModalViewController = ModalViewController()
+    let interactor = ModalInteractor()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         let panGesture = UIPanGestureRecognizer(target: self, action: #selector(panContainer(_:)))
-        self.containerView.addGestureRecognizer(panGesture)
+        self.modalVC.commentView.addGestureRecognizer(panGesture)
+        
         screenHeight = UIScreen.main.bounds.height
-        self.containerViewTopConstraint.constant = screenHeight - 62
+        self.containerViewTopConstraint.constant = screenHeight - 100
         self.containerViewHeightConstraint.constant = screenHeight
+        containerPoint = self.containerView.frame.origin
+        print("\(containerPoint.y)!!")
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let modalVC = segue.destination as? ModalViewController {
+            self.modalVC = modalVC
+            
+        }
     }
     
     @objc func panContainer(_ sender: UIPanGestureRecognizer) {
-        let velocity = sender.velocity(in: containerView)
+        //        let percentThreshold:CGFloat = 0.3  // 드래그해야하는 거리비율
+        ////        guard let interactor = interactor else { return }
+        //
+        let velocity = sender.velocity(in: self.modalVC.commentView)
+        //
+        let translationY = sender.translation(in: containerView).y  // 팬제스쳐의 좌표
         if abs(velocity.y) > abs(velocity.x) {
-            if velocity.y < 0 {
-                
-                let transition = sender.translation(in: containerView)
-                let changedY = containerView.center.y + transition.y
-                print("up / \(changedY)!!")
-                if (changedY / 2) < screenHeight && changedY > 0 {
-                    containerView.center = CGPoint(x: containerView.center.x, y: changedY)
+            if sender.state == .ended {
+                if translationY <= 0 {  // up
+                    self.modalVC.topViewHeightConstraint.constant = 30
+                    UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: { [unowned self] in
+                        self.modalVC.topView.alpha = 1
+                        self.containerView.frame.origin = CGPoint(x: self.containerView.frame.origin.x, y: self.view.frame.origin.y)
+                        })
+                    
                 }
-            }
-            else {
-                
-                let transition = sender.translation(in: containerView)
-                let changedY = containerView.center.y + transition.y
-                print("down / \(changedY)!!")
-                if (changedY / 2) < screenHeight && changedY > 0 {
-                    containerView.center = CGPoint(x: containerView.center.x, y: changedY)
+                else {  // down
+                    UIView.animate(withDuration: 0.5, delay: 0, options: .allowUserInteraction, animations: { [unowned self] in
+                        self.modalVC.topView.alpha = 0
+                        
+                        self.containerView.frame.origin = CGPoint(x: self.containerPoint.x, y: self.containerPoint.y + 105)
+                        }, completion: nil)
+                    self.modalVC.topViewHeightConstraint.constant = 0
+                   
+                    //                UIView.animate(withDuration: 0.1, animations: { [unowned self] in
+                    //                    self.containerView.frame.origin = CGPoint(x: self.containerView.frame.origin.x, y: translationY)
+                    //                })
+                    
                 }
             }
             
+            //            containerPoint = self.containerView.frame.origin
+            //            let transition = sender.translation(in: containerView)
+            print("translationY : \(translationY)!!")
+            
+            
+            //            if velocity.y < 0 {
+            //                let transition = sender.translation(in: containerView)
+            //                print("up : \(upMovement)!!!")
+            //                UIView.animate(withDuration: 0.1, animations: {
+            //                    self.containerView.frame.origin = CGPoint(x: self.containerView.frame.origin.x, y: translation.y)
+            //                })
+            ////                if (changedY / 2) < screenHeight && changedY > 0 {
+            //////                    containerView.center = CGPoint(x: containerView.center.x, y: changedY)
+            ////                    containerView.center = CGPoint(x: UIScreen.main.bounds.width / 2, y: UIScreen.main.bounds.height / 2)
+            ////                }
+            //            }
+            //            else {
+            //                let transition = sender.translation(in: containerView)
+            //                print("down \(progress)!!!")
+            //                self.containerView.frame.origin = CGPoint(x: self.containerView.frame.origin.x, y: translation.y)
+            ////                if (changedY / 2) < screenHeight && changedY > 0 {
+            ////                    containerView.center = centerPoint
+            ////                }
+            //            }
+            
         }
-        
-//        point = sender.location(in: self.view)
-        self.view.layoutIfNeeded()
+        //
+        ////        point = sender.location(in: self.view)
+        //        self.view.layoutIfNeeded()
     }
-
-
+    
+    
 }
 
