@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var shadowView: UIView!
     
     var screenHeight: CGFloat = 0
     var containerPoint: CGPoint = CGPoint.zero
@@ -27,7 +28,22 @@ class ViewController: UIViewController {
         self.containerViewTopConstraint.constant = screenHeight - 100
         self.containerViewHeightConstraint.constant = screenHeight
         containerPoint = self.containerView.frame.origin
-        print("\(containerPoint.y)!!")
+        
+        // bottom만 뺴고
+//        shadowView.layer.masksToBounds = false
+//        shadowView.layer.shadowColor = UIColor.black.cgColor
+//        shadowView.layer.shadowOpacity = 0.8
+        
+        
+        
+        
+        
+        
+//        shadowView.layer.shadowOffset = CGSize(width: 0, height: 0)
+//        shadowView.layer.shadowRadius = 4.0
+        
+//        let shadowRect: CGRect = shadowView.bounds.insetBy(dx: 0, dy: 4)
+//        shadowView.layer.shadowPath = UIBezierPath(rect: shadowRect).cgPath
         
     }
     

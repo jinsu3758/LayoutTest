@@ -15,6 +15,11 @@
 		7438AABD228BEE0300D13BCD /* TestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438AABC228BEE0300D13BCD /* TestTests.swift */; };
 		7438AAC8228BEE0300D13BCD /* TestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438AAC7228BEE0300D13BCD /* TestUITests.swift */; };
 		7438AAD9228BF69000D13BCD /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438AAD8228BF69000D13BCD /* ModalViewController.swift */; };
+		743C1B57232F1DCD0012D2E1 /* ShadowCollectionvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B56232F1DCD0012D2E1 /* ShadowCollectionvViewController.swift */; };
+		743C1B5A232F29320012D2E1 /* UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B59232F29320012D2E1 /* UIKit.swift */; };
+		743C1B5C232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */; };
+		743C1B5E233339A90012D2E1 /* ShadowReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */; };
+		743C1B6223333B5D0012D2E1 /* ShadowReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */; };
 		74F2D911228CEBDA00A2FE9F /* ModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */; };
 		74F2D913228CEFEB00A2FE9F /* ModalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +56,11 @@
 		7438AAC7228BEE0300D13BCD /* TestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUITests.swift; sourceTree = "<group>"; };
 		7438AAC9228BEE0300D13BCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7438AAD8228BF69000D13BCD /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		743C1B56232F1DCD0012D2E1 /* ShadowCollectionvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCollectionvViewController.swift; sourceTree = "<group>"; };
+		743C1B59232F29320012D2E1 /* UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKit.swift; sourceTree = "<group>"; };
+		743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCollectionViewCell.swift; sourceTree = "<group>"; };
+		743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShadowReusableView.xib; sourceTree = "<group>"; };
+		743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowReusableView.swift; sourceTree = "<group>"; };
 		74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAnimator.swift; sourceTree = "<group>"; };
 		74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -80,6 +90,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		742E4C2323447A4200EA5DEE /* ShadowTableView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ShadowTableView;
+			sourceTree = "<group>";
+		};
 		7438AA9B228BEE0200D13BCD = {
 			isa = PBXGroup;
 			children = (
@@ -103,6 +120,10 @@
 		7438AAA6228BEE0200D13BCD /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				742E4C2323447A4200EA5DEE /* ShadowTableView */,
+				7438AAAB228BEE0200D13BCD /* Main.storyboard */,
+				743C1B58232F29240012D2E1 /* Extension */,
+				743C1B55232F19D90012D2E1 /* ShadowCollectionView */,
 				7438AAD5228BF64600D13BCD /* Modal */,
 				7438AAA7228BEE0200D13BCD /* AppDelegate.swift */,
 				7438AAAE228BEE0300D13BCD /* Assets.xcassets */,
@@ -134,12 +155,30 @@
 			isa = PBXGroup;
 			children = (
 				7438AAA9228BEE0200D13BCD /* ViewController.swift */,
-				7438AAAB228BEE0200D13BCD /* Main.storyboard */,
 				7438AAD8228BF69000D13BCD /* ModalViewController.swift */,
 				74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */,
 				74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */,
 			);
 			path = Modal;
+			sourceTree = "<group>";
+		};
+		743C1B55232F19D90012D2E1 /* ShadowCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				743C1B56232F1DCD0012D2E1 /* ShadowCollectionvViewController.swift */,
+				743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */,
+				743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */,
+				743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */,
+			);
+			path = ShadowCollectionView;
+			sourceTree = "<group>";
+		};
+		743C1B58232F29240012D2E1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				743C1B59232F29320012D2E1 /* UIKit.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -247,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7438AAB2228BEE0300D13BCD /* LaunchScreen.storyboard in Resources */,
+				743C1B5E233339A90012D2E1 /* ShadowReusableView.xib in Resources */,
 				7438AAAF228BEE0300D13BCD /* Assets.xcassets in Resources */,
 				7438AAAD228BEE0200D13BCD /* Main.storyboard in Resources */,
 			);
@@ -276,8 +316,12 @@
 				7438AAAA228BEE0200D13BCD /* ViewController.swift in Sources */,
 				74F2D913228CEFEB00A2FE9F /* ModalInteractor.swift in Sources */,
 				7438AAD9228BF69000D13BCD /* ModalViewController.swift in Sources */,
+				743C1B6223333B5D0012D2E1 /* ShadowReusableView.swift in Sources */,
+				743C1B5A232F29320012D2E1 /* UIKit.swift in Sources */,
 				74F2D911228CEBDA00A2FE9F /* ModalAnimator.swift in Sources */,
 				7438AAA8228BEE0200D13BCD /* AppDelegate.swift in Sources */,
+				743C1B5C232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift in Sources */,
+				743C1B57232F1DCD0012D2E1 /* ShadowCollectionvViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
