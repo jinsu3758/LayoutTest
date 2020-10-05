@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		743315D9241B6DBD0042BB44 /* ButtonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743315D8241B6DBD0042BB44 /* ButtonViewController.swift */; };
 		7438AAA8228BEE0200D13BCD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438AAA7228BEE0200D13BCD /* AppDelegate.swift */; };
 		7438AAAA228BEE0200D13BCD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7438AAA9228BEE0200D13BCD /* ViewController.swift */; };
 		7438AAAD228BEE0200D13BCD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7438AAAB228BEE0200D13BCD /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 		743C1B5C232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */; };
 		743C1B5E233339A90012D2E1 /* ShadowReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */; };
 		743C1B6223333B5D0012D2E1 /* ShadowReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */; };
+		74EC9829252ADFA900BBC7A3 /* ShadowRadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EC9828252ADFA900BBC7A3 /* ShadowRadiusViewController.swift */; };
 		74F2D911228CEBDA00A2FE9F /* ModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */; };
 		74F2D913228CEFEB00A2FE9F /* ModalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */; };
 /* End PBXBuildFile section */
@@ -42,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		743315D8241B6DBD0042BB44 /* ButtonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonViewController.swift; sourceTree = "<group>"; };
 		7438AAA4228BEE0200D13BCD /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7438AAA7228BEE0200D13BCD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7438AAA9228BEE0200D13BCD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +64,7 @@
 		743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCollectionViewCell.swift; sourceTree = "<group>"; };
 		743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShadowReusableView.xib; sourceTree = "<group>"; };
 		743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowReusableView.swift; sourceTree = "<group>"; };
+		74EC9828252ADFA900BBC7A3 /* ShadowRadiusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowRadiusViewController.swift; sourceTree = "<group>"; };
 		74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAnimator.swift; sourceTree = "<group>"; };
 		74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +101,14 @@
 			path = ShadowTableView;
 			sourceTree = "<group>";
 		};
+		743315D7241B6DA80042BB44 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				743315D8241B6DBD0042BB44 /* ButtonViewController.swift */,
+			);
+			path = Button;
+			sourceTree = "<group>";
+		};
 		7438AA9B228BEE0200D13BCD = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +132,10 @@
 		7438AAA6228BEE0200D13BCD /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				74EC9824252ADDB700BBC7A3 /* ShadowRadius */,
 				742E4C2323447A4200EA5DEE /* ShadowTableView */,
 				7438AAAB228BEE0200D13BCD /* Main.storyboard */,
+				743315D7241B6DA80042BB44 /* Button */,
 				743C1B58232F29240012D2E1 /* Extension */,
 				743C1B55232F19D90012D2E1 /* ShadowCollectionView */,
 				7438AAD5228BF64600D13BCD /* Modal */,
@@ -179,6 +193,14 @@
 				743C1B59232F29320012D2E1 /* UIKit.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		74EC9824252ADDB700BBC7A3 /* ShadowRadius */ = {
+			isa = PBXGroup;
+			children = (
+				74EC9828252ADFA900BBC7A3 /* ShadowRadiusViewController.swift */,
+			);
+			path = ShadowRadius;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -318,9 +340,11 @@
 				7438AAD9228BF69000D13BCD /* ModalViewController.swift in Sources */,
 				743C1B6223333B5D0012D2E1 /* ShadowReusableView.swift in Sources */,
 				743C1B5A232F29320012D2E1 /* UIKit.swift in Sources */,
+				74EC9829252ADFA900BBC7A3 /* ShadowRadiusViewController.swift in Sources */,
 				74F2D911228CEBDA00A2FE9F /* ModalAnimator.swift in Sources */,
 				7438AAA8228BEE0200D13BCD /* AppDelegate.swift in Sources */,
 				743C1B5C232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift in Sources */,
+				743315D9241B6DBD0042BB44 /* ButtonViewController.swift in Sources */,
 				743C1B57232F1DCD0012D2E1 /* ShadowCollectionvViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

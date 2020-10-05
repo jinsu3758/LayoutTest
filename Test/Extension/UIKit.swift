@@ -9,6 +9,16 @@
 import Foundation
 import UIKit
 
+@IBDesignable
+extension UIView {
+    
+    @IBInspectable
+    var cornerRadius: CGFloat {
+        get { self.layer.cornerRadius }
+        set { self.layer.cornerRadius = newValue }
+    }
+}
+
 extension CALayer {
     func setShadow(color: UIColor = .black, alpha: Float = 0.5, x: CGFloat = 0, y: CGFloat = 2, blur: CGFloat = 4, spread: CGFloat = 0) {
         masksToBounds = false
@@ -91,5 +101,28 @@ extension UIBezierPath {
         trianglePath.close()
         
         return trianglePath
+    }
+}
+
+@IBDesignable
+extension UIButton {
+    @IBInspectable var isSelectedImage: Bool {
+        return false
+    }
+    @IBInspectable var selectedImg: UIImage {
+        get { self.selectedImg }
+        set { self.setImage(newValue, for: .selected) }
+    }
+    
+    @IBInspectable var unSelectedImg: UIImage {
+        get { self.unSelectedImg }
+        set { self.setImage(newValue, for: .normal)}
+    }
+    
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        if self.isSelectedImage {
+            self.isSelected = !self.isSelected
+        }
     }
 }
