@@ -9,7 +9,6 @@
 import Foundation
 import UIKit
 
-@IBDesignable
 extension UIView {
     
     @IBInspectable
@@ -104,7 +103,6 @@ extension UIBezierPath {
     }
 }
 
-@IBDesignable
 extension UIButton {
     @IBInspectable var isSelectedImage: Bool {
         return false

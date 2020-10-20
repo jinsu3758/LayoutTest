@@ -21,6 +21,8 @@
 		743C1B5C232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */; };
 		743C1B5E233339A90012D2E1 /* ShadowReusableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */; };
 		743C1B6223333B5D0012D2E1 /* ShadowReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */; };
+		7481CBA2253EAA9C009FFCA7 /* NavigationRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBA1253EAA9C009FFCA7 /* NavigationRootViewController.swift */; };
+		7481CBA7253EAAA5009FFCA7 /* NextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7481CBA6253EAAA5009FFCA7 /* NextViewController.swift */; };
 		74EC9829252ADFA900BBC7A3 /* ShadowRadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EC9828252ADFA900BBC7A3 /* ShadowRadiusViewController.swift */; };
 		74F2D911228CEBDA00A2FE9F /* ModalAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */; };
 		74F2D913228CEFEB00A2FE9F /* ModalInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */; };
@@ -64,6 +66,8 @@
 		743C1B5B232F2F5E0012D2E1 /* ShadowCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowCollectionViewCell.swift; sourceTree = "<group>"; };
 		743C1B5D233339A90012D2E1 /* ShadowReusableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShadowReusableView.xib; sourceTree = "<group>"; };
 		743C1B6123333B5D0012D2E1 /* ShadowReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowReusableView.swift; sourceTree = "<group>"; };
+		7481CBA1253EAA9C009FFCA7 /* NavigationRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRootViewController.swift; sourceTree = "<group>"; };
+		7481CBA6253EAAA5009FFCA7 /* NextViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextViewController.swift; sourceTree = "<group>"; };
 		74EC9828252ADFA900BBC7A3 /* ShadowRadiusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShadowRadiusViewController.swift; sourceTree = "<group>"; };
 		74F2D910228CEBDA00A2FE9F /* ModalAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalAnimator.swift; sourceTree = "<group>"; };
 		74F2D912228CEFEB00A2FE9F /* ModalInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalInteractor.swift; sourceTree = "<group>"; };
@@ -132,6 +136,8 @@
 		7438AAA6228BEE0200D13BCD /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				7481CB95253EAA3D009FFCA7 /* NavigationController */,
+				74EC985D252B078300BBC7A3 /* StackView */,
 				74EC9824252ADDB700BBC7A3 /* ShadowRadius */,
 				742E4C2323447A4200EA5DEE /* ShadowTableView */,
 				7438AAAB228BEE0200D13BCD /* Main.storyboard */,
@@ -195,12 +201,28 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		7481CB95253EAA3D009FFCA7 /* NavigationController */ = {
+			isa = PBXGroup;
+			children = (
+				7481CBA1253EAA9C009FFCA7 /* NavigationRootViewController.swift */,
+				7481CBA6253EAAA5009FFCA7 /* NextViewController.swift */,
+			);
+			path = NavigationController;
+			sourceTree = "<group>";
+		};
 		74EC9824252ADDB700BBC7A3 /* ShadowRadius */ = {
 			isa = PBXGroup;
 			children = (
 				74EC9828252ADFA900BBC7A3 /* ShadowRadiusViewController.swift */,
 			);
 			path = ShadowRadius;
+			sourceTree = "<group>";
+		};
+		74EC985D252B078300BBC7A3 /* StackView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = StackView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,7 +361,9 @@
 				74F2D913228CEFEB00A2FE9F /* ModalInteractor.swift in Sources */,
 				7438AAD9228BF69000D13BCD /* ModalViewController.swift in Sources */,
 				743C1B6223333B5D0012D2E1 /* ShadowReusableView.swift in Sources */,
+				7481CBA2253EAA9C009FFCA7 /* NavigationRootViewController.swift in Sources */,
 				743C1B5A232F29320012D2E1 /* UIKit.swift in Sources */,
+				7481CBA7253EAAA5009FFCA7 /* NextViewController.swift in Sources */,
 				74EC9829252ADFA900BBC7A3 /* ShadowRadiusViewController.swift in Sources */,
 				74F2D911228CEBDA00A2FE9F /* ModalAnimator.swift in Sources */,
 				7438AAA8228BEE0200D13BCD /* AppDelegate.swift in Sources */,
@@ -451,7 +475,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -506,7 +530,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -523,6 +547,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AL9L4NE9HL;
 				INFOPLIST_FILE = Test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -541,6 +566,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = AL9L4NE9HL;
 				INFOPLIST_FILE = Test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
