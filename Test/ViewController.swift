@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var containerViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var containerViewTopConstraint: NSLayoutConstraint!
     @IBOutlet weak var shadowView: UIView!
+    @IBOutlet weak var rightButton: UIButton!
     
     var screenHeight: CGFloat = 0
     var containerPoint: CGPoint = CGPoint.zero
@@ -29,11 +30,21 @@ class ViewController: UIViewController {
         self.containerViewHeightConstraint.constant = screenHeight
         containerPoint = self.containerView.frame.origin
         
+        let customView = CustomView.createFromNib()!
+        customView.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(customView)
+        
+        customView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true
+        customView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+        customView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+        customView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        
+        
+        
         // bottom만 뺴고
 //        shadowView.layer.masksToBounds = false
 //        shadowView.layer.shadowColor = UIColor.black.cgColor
 //        shadowView.layer.shadowOpacity = 0.8
-        
         
         
         

@@ -14,6 +14,9 @@ class NavigationRootViewController: UIViewController {
         super.viewDidLoad()
         self.navigationItem.title = "상승률 BEST 테마"
         
+        navigationController?.setNavigationBarHidden(true, animated: false)
+        navigationController?.interactivePopGestureRecognizer?.delegate = nil
+
 //        let leftBarItem = UIBarButtonItem(image: UIImage.init(named: "ico_line_on"), style: .plain, target: self, action: nil)
 //        self.navigationItem.leftBarButtonItem = leftBarItem
 //        self.navigationController?.navigationBar.tintColor = .black
