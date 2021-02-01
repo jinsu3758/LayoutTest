@@ -15,9 +15,8 @@ class CustomView: UIView {
         let bundle = Bundle(for: self)
         let nib = UINib(nibName: "CustomView", bundle: bundle) //“MyViews” is name of xib file
         
-        return nib.instantiate(withOwner: nil, options: nil).first {
-            ($0 as? UIView)?.restorationIdentifier == "1"
-        }! as! CustomView //You will set restorationIdentifier later
+        return nib.instantiate(withOwner: nil, options: nil).first as! CustomView
+        //You will set restorationIdentifier later
     }
     
     class func createFromNib() -> CustomView? {
